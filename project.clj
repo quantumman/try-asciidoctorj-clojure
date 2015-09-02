@@ -5,7 +5,8 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [compojure "1.3.1"]
                  [ring/ring-defaults "0.1.2"]
-                 [http-kit "2.1.16"]]
+                 [http-kit "2.1.16"]
+                 [enlive "1.1.1"]]
   :plugins [[lein-ring "0.8.13"]]
   :ring {:handler try-asciidoctorj.handler/app}
   :main try-asciidoctorj.handler
