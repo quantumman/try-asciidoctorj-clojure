@@ -3,10 +3,20 @@
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
-            [org.httpkit.server :refer [run-server]]))
+            [org.httpkit.server :refer [run-server]]
+            [net.cgrand.enlive-html :as html]))
+
+(html/deftemplate main-template "templates/application.html"
+  []
+  )
+
+
+(defn index-page
+  []
+  (main-template))
 
 (defroutes app-routes
-  (GET "/" [] "Hello World")
+  (GET "/" [] (index-page))
   (route/not-found "Not Found"))
 
 (def app
