@@ -6,7 +6,20 @@
   <body>
     <h1>AsccidoctorJ</h1>
     <form action="/" method="POST">
-      <textarea cols="100" rows="40" name="source"></textarea>
+      <textarea cols="100" rows="40" name="source">
+= Sample Document
+
+[style one]
+This is content of first content part
+
+[[partId]]
+[style two,role=partRole]
+--
+And content of second content part
+
+This block can be as long as you want.
+--
+      </textarea>
       <div>
         <label>
           <input type="radio" name="doctype" value="" checked/>
