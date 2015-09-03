@@ -6,7 +6,8 @@
                  [compojure "1.3.1"]
                  [ring/ring-defaults "0.1.2"]
                  [http-kit "2.1.16"]
-                 [enlive "1.1.1"]]
+                 [enlive "1.1.1"]
+                 [org.asciidoctor/asciidoctorj "1.5.2"]]
   :plugins [[lein-ring "0.8.13"]]
   :ring {:handler try-asciidoctorj.handler/app}
   :main try-asciidoctorj.handler
