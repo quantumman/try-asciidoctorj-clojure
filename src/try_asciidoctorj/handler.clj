@@ -3,12 +3,14 @@
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
+            [ring.util.anti-forgery :refer :all]
             [org.httpkit.server :refer [run-server]]
             [net.cgrand.enlive-html :as html]))
 
 (html/deftemplate main-template "templates/application.html"
   []
-  )
+  [:form]
+  (html/prepend (html/html-snippet (anti-forgery-field))))
 
 
 (defn index-page
